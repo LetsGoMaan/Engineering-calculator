@@ -32,7 +32,7 @@ export const CURRENT_STATE = new Proxy(STATE, {
                     (com.style.backgroundColor =
                         com.value === value
                             ? 'blue'
-                            : 'rgba(255, 255, 255, 0.1)')
+                            : '#5a5b5c')
             )
         }
         target[key] = value
