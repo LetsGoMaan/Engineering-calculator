@@ -22,13 +22,22 @@ $git clone https://github.com/LetsGoMaan/Engineering-calculator.git
 
 ## Folders structure
 src                              # Contains all logic of the project
+
     styles                       # Holds .css files with app styles
+    
         main.css
+        
     Calculator.js                # Class calculator
+    
     CommandSelector.js           # Holds all mathematical operations
+    
     CommandSelector.test.js      # Tests
+    
     contains.js                  # Holds all the constants using in the app
+    
     errorHandler.js              # Error handler to prevent app errors
+    
     index.js                     # Contains all event listeners
+    
     template.html                # Main HTML file with document markup
 
