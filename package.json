@@ -18,6 +18,7 @@
   },
   "keywords": [],
   "license": "ISC",
+  "author": "LetsGoMaan",
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
@@ -48,5 +49,8 @@
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "homepage": "https://github.com/LetsGoMaan/Engineering-calculator/blob/main/README.md"
 }
+
+
