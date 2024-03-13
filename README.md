@@ -39,5 +39,5 @@ src                              # Contains all logic of the project
     
     index.js                     # Contains all event listeners
     
-    template.html                # Main HTML file with document markup
+    index.html                # Main HTML file with document markup
 
