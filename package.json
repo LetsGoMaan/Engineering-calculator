@@ -48,9 +48,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "bugs": {
-    "url": "https://github.com/mikepetrusha/Innowise-Lab-Internship-Level-0-Custom-calculator/issues"
-  },
-  "homepage": "https://github.com/mikepetrusha/Innowise-Lab-Internship-Level-0-Custom-calculator#readme"
+  }
 }
