@@ -20,12 +20,27 @@ import {
 
 
 DELETEBUTTON.addEventListener('click', () => {
-    SCOREBOARD.value = ''
+    SCOREBOARD.value = 0
 })
 
-NUMBERS.forEach((num) =>
-    num.addEventListener('click', () => (SCOREBOARD.value += num.value))
-)
+function addValueToScoreBoard (num) {
+    if (SCOREBOARD.value === '0') {
+        SCOREBOARD.value = num.target.innerText;
+    } else {
+        SCOREBOARD.value += num.target.innerText;
+    }
+   // return SCOREBOARD.value
+}
+
+NUMBERS.forEach((num) => {
+    num.addEventListener('click', addValueToScoreBoard)
+})
+
+
+
+
+
+
 
 SIGNS.forEach((sign) =>
     sign.addEventListener('click', () => signValidation(sign))

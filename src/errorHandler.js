@@ -39,7 +39,7 @@ export const twoValueValidation = (com) => {
         ERROR.value = "Can't find a root of negative number"
     } else {
         CALCULATOR.resetValue(Number(SCOREBOARD.value))
-        SCOREBOARD.value = ''
+        SCOREBOARD.value = 0
         CURRENT_STATE.command = com.value
     }
 }
