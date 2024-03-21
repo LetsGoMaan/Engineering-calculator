@@ -1,4 +1,4 @@
-import { CALCULATOR, SCOREBOARD } from './contains'
+import {CALCULATOR, CURRENT_STATE, SCOREBOARD} from './contains'
 
 export class AddCommand {
     constructor(valueToAdd) {
@@ -124,7 +124,28 @@ export const CommandSelector = (command, value = 1) => {
             CALCULATOR.changeMemory(-Number(SCOREBOARD.value))
             break
         case 'MR':
-            SCOREBOARD.value = String(expression + CALCULATOR.memory);
+            let currentValue = parseFloat(expression);
+            let result;
+            switch (expression.slice(-1)) {
+                case '+':
+                    result = currentValue + CALCULATOR.memory;
+                    break;
+                case '-':
+                    result = currentValue - CALCULATOR.memory;
+                    break;
+                case '×':
+                    result = currentValue * CALCULATOR.memory;
+                    break;
+                case '÷':
+                    result = currentValue / CALCULATOR.memory;
+                    break;
+                default:
+                    result = CALCULATOR.memory;
+                    break;
+            }
+            SCOREBOARD.value = String(result);
+            CURRENT_STATE.command = '';
+            CURRENT_STATE.signIndex = 0;
             break
     }
 }

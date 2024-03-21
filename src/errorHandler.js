@@ -45,7 +45,6 @@ export const twoValueValidation = (com) => {
 }
 
 export const Validation = (com) => {
-    console.log(com.value)
     const isPointOrMinusOrPlus =
         SCOREBOARD.value === '.' ||
         SCOREBOARD.value === '-' ||
@@ -88,7 +87,6 @@ export const Validation = (com) => {
 }
 
 export const signValidation = (sign) => {
-    console.log(SCOREBOARD.value)
     const startOfInput = !SCOREBOARD.value || SCOREBOARD.value === '-'
     const lastSymbolIsSign = SIGN_VALUES.includes(
         SCOREBOARD.value[SCOREBOARD.value.length - 1]
@@ -175,9 +173,11 @@ const arithmeticCommandHandler = (sign) => {
         } else {
             CALCULATOR.executeCommand(
                 CommandSelector(SCOREBOARD.value[CURRENT_STATE.signIndex], y)
+
             )
 
         SCOREBOARD.value = String(CALCULATOR.value)
+
 
             CURRENT_STATE.signIndex =
                 sign.value === '=' ? 0 : SCOREBOARD.value.length
