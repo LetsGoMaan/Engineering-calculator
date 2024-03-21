@@ -82,6 +82,7 @@ export class PercentageCommand {
 }
 
 export const CommandSelector = (command, value = 1) => {
+    let expression = SCOREBOARD.value;
     switch (command) {
         case '+':
             return new AddCommand(value)
@@ -123,7 +124,7 @@ export const CommandSelector = (command, value = 1) => {
             CALCULATOR.changeMemory(-Number(SCOREBOARD.value))
             break
         case 'MR':
-            SCOREBOARD.value = String(CALCULATOR.memory)
+            SCOREBOARD.value = String(expression + CALCULATOR.memory);
             break
     }
 }

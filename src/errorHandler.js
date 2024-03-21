@@ -45,6 +45,7 @@ export const twoValueValidation = (com) => {
 }
 
 export const Validation = (com) => {
+    console.log(com.value)
     const isPointOrMinusOrPlus =
         SCOREBOARD.value === '.' ||
         SCOREBOARD.value === '-' ||
@@ -62,9 +63,11 @@ export const Validation = (com) => {
 
     if (CURRENT_STATE.command) {
         ERROR.value = 'Perform previous command'
-    } else if (invalidValue) {
-        ERROR.value = 'The value should be one number'
-    } else if (divisionByZero) {
+    }
+    // else if (invalidValue) {
+    //     ERROR.value = 'The value should be one number'
+    // }
+    else if (divisionByZero) {
         ERROR.value = 'Division by 0'
     } else if (rootFromNegative) {
         ERROR.value = "Can't find a root of negative number"
@@ -73,6 +76,7 @@ export const Validation = (com) => {
     } else if (com.value === '10^x') {
         CALCULATOR.resetValue(10)
         CALCULATOR.executeCommand(
+
             CommandSelector(com.value, Number(SCOREBOARD.value))
         )
         SCOREBOARD.value = String(CALCULATOR.value)
@@ -84,6 +88,7 @@ export const Validation = (com) => {
 }
 
 export const signValidation = (sign) => {
+    console.log(SCOREBOARD.value)
     const startOfInput = !SCOREBOARD.value || SCOREBOARD.value === '-'
     const lastSymbolIsSign = SIGN_VALUES.includes(
         SCOREBOARD.value[SCOREBOARD.value.length - 1]
@@ -154,6 +159,7 @@ const twoSignCommandHandler = (sign) => {
 }
 
 const arithmeticCommandHandler = (sign) => {
+
     if (CURRENT_STATE.signIndex) {
         let y = Number(
             SCOREBOARD.value.substring(
@@ -170,7 +176,9 @@ const arithmeticCommandHandler = (sign) => {
             CALCULATOR.executeCommand(
                 CommandSelector(SCOREBOARD.value[CURRENT_STATE.signIndex], y)
             )
-            SCOREBOARD.value = String(CALCULATOR.value)
+
+        SCOREBOARD.value = String(CALCULATOR.value)
+
             CURRENT_STATE.signIndex =
                 sign.value === '=' ? 0 : SCOREBOARD.value.length
             SCOREBOARD.value += sign.value === '=' ? '' : sign.value

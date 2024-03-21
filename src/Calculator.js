@@ -22,6 +22,7 @@ export class Calculator {
     }
 
     executeCommand(command) {
+        console.log(this.value)
         this.history.push(this.value)
         this.value = command.execute(this.value)
     }
